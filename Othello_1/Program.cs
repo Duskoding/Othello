@@ -1,3 +1,5 @@
+using Othello_1.TicTacToe;
+
 namespace Othello_1
 {
     internal static class Program

@@ -12,6 +12,6 @@ namespace Othello_1
 
         public Boolean IsTerminal();
 
-        public IGamePosition[] GetChildren();
+        public IGamePosition[] GetChildren(bool maximizingPlayer); 
     }
 }
