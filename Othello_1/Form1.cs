@@ -148,7 +148,7 @@ namespace Othello_1
 
                 if (position.IsTerminal())
                 {
-                    ifGameOver();//quick 3 lines to check if now that ai has passed its turn to black, to see if black is also terminal, if so the n gameover
+                    ifGameOver();
                 }
 
                 return;
@@ -165,7 +165,7 @@ namespace Othello_1
                 return;
             }
 
-            bool playerHasValidMove = false;//do what we did for hasValidMove but for player, we do it here because its harder to do in players turn since it only triggers when you click, so this does it automatically, and since the first move is always made by player, and anyways there should always be valid moves in the first round of the game, we dont need it to be checked on the first round, and after all human plays the ai will run this
+            bool playerHasValidMove = false;
             for (int r = 0; r < SIZE; ++r)
             {
                 for (int c = 0; c < SIZE; ++c)

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Othello_1.TicTacToe
 {
-    internal enum Tiles//figured enum because "each cell as Empty, Black, or white"
+    internal enum Tiles
     {
         Empty,
         X,
@@ -46,14 +46,13 @@ namespace Othello_1.TicTacToe
                     pb.BackColor = pbModel.BackColor;
                     pb.Size = pbModel.Size;
                     pb.Image = pbModel.Image;
-                    pb.SizeMode = pbModel.SizeMode;//AI helped, the images kept being stretched so you can only see the top left
+                    pb.SizeMode = pbModel.SizeMode;
 
-                    pb.Location = new Point(col * pbModel.Width, row * pbModel.Height); //had help witth ai for dynamic sizing, i want it to look nice
-                    
+                    pb.Location = new Point(col * pbModel.Width, row * pbModel.Height);
+
                     int[] arr = { row, col };
-                    //position = Tiles.Empty;
                     pb.Tag = arr;
-                    pb.Click += (s, e) => { BoxClicked(s, e); };//got confused at first and looked it up, s and e are sender and event stuff
+                    pb.Click += (s, e) => { BoxClicked(s, e); };
                     board[row, col] = pb;
                     gbBoard.Controls.Add(pb);
                 }
@@ -73,11 +72,11 @@ namespace Othello_1.TicTacToe
                     int row = arr[0];
                     int col = arr[1];
 
-                    int arrIndex = (row * SIZE) + col; //arr is a 1d, looked up the formula to tuen a 2d array into a 1d array. (y * width) + x, as discovered in the screen position, row is y, col is x. size is the only thing left so thats probably our width
-                                                       //game logic
+                    int arrIndex = (row * SIZE) + col;
+
                     if (position.tile[arrIndex] != Tiles.Empty || position.IsTerminal())
                     {
-                        return; //for cant play, maybe i should also make a lock when game ends
+                        return;
                     }
 
                     if (isXTurn)
@@ -87,12 +86,7 @@ namespace Othello_1.TicTacToe
                         ifGameOver();
                         isXTurn = !isXTurn;
                     }
-                    //else
-                    //{
-                    //position.tile[arrIndex] = Tiles.O;
-                    //board[row, col].Image = Resources.O;
-                    //}    was trying to do this to do this so player could do each for the bonus section but its not wise to attempt before i just complete the base assignment, also this was the code before the redraw method
-                    
+
                     if (!isXTurn && !position.IsTerminal())
                     {
                         aisTurn(); //trigger the ai to play
@@ -110,7 +104,7 @@ namespace Othello_1.TicTacToe
         void aisTurn()
         {
             int depth = (int)numericUpDown1.Value;
-            var (bestVal, bestPos) = TMinimaxSolver.Minimax(position, depth, false); //the niMaxSolver purpse section was helpful on this
+            var (bestVal, bestPos) = TMinimaxSolver.Minimax(position, depth, false);
             position = (TicTacToePosition)bestPos;
             RedrawBoard();
             isXTurn = !isXTurn;

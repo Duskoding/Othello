@@ -41,7 +41,7 @@ namespace Othello_1.TicTacToe
                 return true;
             }//if youve won you cant play anymore
 
-            for (int i = 0; i < tile.Length; i++)//i wanted to use .size but there is none
+            for (int i = 0; i < tile.Length; i++)
             {
                 if (tile[i] == Tiles.Empty)
                 {
