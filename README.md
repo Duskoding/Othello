@@ -3,6 +3,12 @@
 An interactive 8×8 Othello (Reversi) desktop application built in C# using Windows Forms. Features a single-player mode against a game AI with configurable difficulty and complete rules engine support.
 
 ---
+# Othello
+
+![Game Start](Othello_1/Resources/GameStart.png)
+
+![Game End](Othello_1/Resources/GameEnd.png)
+___
 
 ## Features
 
@@ -27,3 +33,4 @@ An interactive 8×8 Othello (Reversi) desktop application built in C# using Wind
 * **AI Framework:** The Minimax solver with Alpha-Beta pruning (`MinimaxSolver.cs` and `TicTacToe/TMinimaxSolver.cs`) was provided by my teacher as part of the course. I integrated it with my own game positions to handle tree traversal and lookahead depth evaluation.
 
 ---
+
