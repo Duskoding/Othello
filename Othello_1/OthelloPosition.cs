@@ -24,7 +24,7 @@ namespace Othello_1
             }
 
             int midleft = (SIZE / 2) - 1;
-            int midright = SIZE / 2; //could technically just use midleft + 1, or midleft = midright - 1
+            int midright = SIZE / 2;
 
             tile[midleft, midleft] = Tiles.O_White;
             tile[midright, midright] = Tiles.O_White;
@@ -77,7 +77,7 @@ namespace Othello_1
         }
         public bool IsTerminal()
         {
-            for (int r = 0; r < SIZE; r++)//SIZE because 2d arrays as assignment asked for
+            for (int r = 0; r < SIZE; r++)
             {
                 for (int c = 0; c < SIZE; c++)
                 {
@@ -180,7 +180,7 @@ namespace Othello_1
             else
             {
                 player = Tiles.O_White;
-                opponent = Tiles.O_Black; //wanted to do a double turnerary to keep style with tictactoes turnarary, but when i was looking up if its possible, i found out that the practice is frowned upon
+                opponent = Tiles.O_Black;
             }
             List<(int row, int col)> canFlip = new List<(int row, int col)>();
 
@@ -191,10 +191,10 @@ namespace Othello_1
 
             int[,] dirs = { { -1, -1 }, { -1, 0 }, { -1, 1 }, { 0, -1 }, { 0, 1 }, { 1, -1 }, { 1, 0 }, { 1, 1 } };
 
-            for(int i = 0; i < dirs.GetLength(0); i++) //getLength(0) so we just get the length of one dimention, so 8 instead of 16
+            for(int i = 0; i < dirs.GetLength(0); i++)
             {
-                int x = dirs[i, 0]; //we want the first number
-                int y = dirs[i, 1];//here we get the other
+                int x = dirs[i, 0];
+                int y = dirs[i, 1];
 
                 int r = clickRow + x;
                 int c = clickCol + y;
@@ -211,7 +211,7 @@ namespace Othello_1
 
                 if(r >= 0 && r < SIZE && c >= 0 && c < SIZE && tile[r, c] == player)
                 {
-                    canFlip.AddRange(tempFlippables); //learnt abbout addRange when learning there can be many opponent pieces in between
+                    canFlip.AddRange(tempFlippables);
                 }
                 //if it does not find the players piece it cannot flip. nothing was changed, and a new list will be made next iteration
             }

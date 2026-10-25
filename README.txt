@@ -24,6 +24,6 @@ An interactive 8×8 Othello (Reversi) desktop application built in C# using Wind
 ## Architecture & Attribution
 
 * **Core Engine & GUI:** Custom implementation of game rules, board visualization, move scanning, and state transitions built from scratch in C#.
-* **AI Framework:** The AI decision pipeline incorporates an Alpha-Beta search simulator framework provided as an academic reference, which was integrated to handle tree traversal and lookahead depth evaluation.
+* **AI Framework:** The Minimax solver with Alpha-Beta pruning (`MinimaxSolver.cs` and `TicTacToe/TMinimaxSolver.cs`) was provided by my teacher as part of the course. I integrated it with my own game positions to handle tree traversal and lookahead depth evaluation.
 
 ---

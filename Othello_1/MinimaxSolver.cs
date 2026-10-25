@@ -11,6 +11,7 @@ namespace Othello_1
         /// <summary>
         /// Runs Minimax with Alpha-Beta pruning.
         /// Returns the (heuristic value, best child position) pair.
+        /// Provided by my teacher as part of the course.
         /// </summary>
         public static (double val, IGamePosition pos) Minimax(
         IGamePosition node,
