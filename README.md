@@ -49,8 +49,6 @@ This is a Windows Forms app, so it runs on Windows only.
 
 ## TicTacToe purpose
 
-## TicTacToe purpose
-
 I decided to start this project on a smaller scale before going on to Othello. I believe it is a great way to learn. The TicTacToe folder is that first version, and it uses the same solver as the Othello game. It is not opened when you run the app.
 
 ---
