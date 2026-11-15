@@ -1,9 +1,8 @@
 # Othello (Reversi) Game Engine & AI
 
-An interactive 8×8 Othello (Reversi) desktop application built in C# using Windows Forms. Features a single-player mode against a game AI with configurable difficulty and complete rules engine support.
+A desktop Othello game written in C# with Windows Forms. You play Black against a computer opponent that looks several moves ahead to choose its move.
 
 ---
-# Othello
 
 ![Game Start](Othello_1/Resources/GameStart.png)
 
@@ -12,10 +11,10 @@ ___
 
 ## Features
 
-* **Single-Player Mode:** Play against an integrated game AI designed for dynamic decision-making.
-* **Algorithmic Board Logic:** Uses recursive grid traversal to scan move validity across all 8 directional vectors, handle piece-flipping, and manage temporary state validation.
+* **Play against the computer** you are Black and move first; the AI plays White.
+* **Full rules:** a move is only allowed if it flips at least one piece, pieces flip in all 8 directions, and a player with no valid move passes automatically.
 * **Automated Rules Handling:** Includes edge-case processing, such as automatic turn-passing when no valid moves remain for a player.
-* **Configurable AI Depth:** Adjust the search depth to scale the lookahead complexity and difficulty of the AI.
+* **Adjustable difficulty:** Adjust the search depth to scale the lookahead complexity and difficulty of the AI.
 
 ---
 
@@ -34,3 +33,8 @@ ___
 
 ---
 
+## How it works
+
+* **OthelloPosition.cs:** Holds the board and the rules. For a move it scans outward in each of the 8 directions, collecting the opponent's pieces until it reaches one of the player's own pieces. It also lists every possible next position for the AI and scores a board by the difference in piece counts.
+
+---
